@@ -16,7 +16,7 @@ echo "###########################################"
 echo ""
 
 echo "Input New SSH Port:"
-read sshport
+read -p sshport
 
 echo 'Port ${sshport}' >> /etc/ssh/sshd_config
 
