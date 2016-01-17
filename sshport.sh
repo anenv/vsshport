@@ -16,11 +16,11 @@ echo "###########################################"
 echo ""
 
 echo "Input New SSH Port:"
-read -p sshport
+read sshport
 
-echo 'Port ${sshport}' >> /etc/ssh/sshd_config
+echo "Port ${sshport}" >> /etc/ssh/sshd_config
 
-iptables -A INPUT -p tcp -m tcp --dport ${sshport} -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport $sshport -j ACCEPT
 
 /etc/init.d/iptables restart 
 /etc/init.d/sshd restart 
